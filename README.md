@@ -15,7 +15,7 @@ A WPF application for analyzing wallet transactions using multiple API's. The ap
 - Loading indicator when fetching transaction data.
 - Semi-transparent design with a modern UI featuring a dark grey-to-pink gradient background.
 
-## Demo
+## Youtube Demo
 
 [![Watch the video](https://img.youtube.com/vi/HQLgd2tPahE/0.jpg)](https://www.youtube.com/watch?v=HQLgd2tPahE&ab_channel=xqyet)
 
