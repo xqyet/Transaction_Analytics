@@ -1,0 +1,8 @@
+﻿<Page x:Class="Blockchain_Tool.TransactionMappingPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="TransactionMappingPage">
+	<Grid>
+		<TextBlock Text="Transaction Mapping Page" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24"/>
+	</Grid>
+</Page>
