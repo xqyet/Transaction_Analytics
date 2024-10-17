@@ -1,0 +1,8 @@
+﻿<Page x:Class="Blockchain_Tool.WalletDashboardPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="WalletDashboardPage">
+	<Grid>
+		<TextBlock Text="Wallet Dashboard Page" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24"/>
+	</Grid>
+</Page>
