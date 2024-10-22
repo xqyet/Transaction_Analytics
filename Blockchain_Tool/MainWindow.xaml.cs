@@ -12,7 +12,7 @@ namespace Blockchain_Tool
 {
     public partial class MainWindow : Window
     {
-        private readonly string apiKey = "api_key_here";
+        private readonly string apiKey = "1FM6A7DWFEF9IQ9QCDJWYPIFBEQDYG5CFN";
         private readonly string baseUrl = "https://api.etherscan.io/api";
 
         public MainWindow()
@@ -48,9 +48,56 @@ namespace Blockchain_Tool
             }
         }
 
+        // Method to fetch wallet balance in ETH
+        // Method to fetch wallet balance in ETH
+        private async Task FetchWalletBalance(string walletAddress)
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                try
+                {
+                    string url = $"{baseUrl}?module=account&action=balance&address={walletAddress}&tag=latest&apikey={apiKey}";
+                    var response = await client.GetAsync(url);
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        var jsonResponse = await response.Content.ReadAsStringAsync();
+                        var balanceData = JsonSerializer.Deserialize<BalanceResponse>(jsonResponse);
+
+                        if (balanceData != null && balanceData.Status == "1")
+                        {
+                            // Convert the balance from wei to ETH
+                            double walletBalance = double.Parse(balanceData.Result) / 1_000_000_000_000_000_000;
+                            WalletValueTextBlock.Text = $"Current Wallet Value: {walletBalance:0.0000} ETH";
+
+                            
+                        }
+                        else
+                        {
+                            WalletValueTextBlock.Text = "Failed to retrieve wallet balance.";
+                        }
+                    }
+                    else
+                    {
+                        WalletValueTextBlock.Text = "Error fetching wallet balance.";
+                    }
+                }
+                catch (Exception ex)
+                {
+                    WalletValueTextBlock.Text = $"Error fetching wallet balance: {ex.Message}";
+                }
+            }
+        }
+
+
+
+        // Method to fetch wallet transactions
         // Method to fetch wallet transactions
         private async Task FetchWalletTransactions(string walletAddress)
         {
+            // Fetch and display wallet balance
+            await FetchWalletBalance(walletAddress); // This will update the wallet balance in the UI
+
             // Show the loading bar while data is being fetched
             LoadingBar.Visibility = Visibility.Visible;
 
@@ -122,6 +169,9 @@ namespace Blockchain_Tool
         }
 
 
+
+
+
         // Helper method to convert Unix timestamp to DateTime
         public static DateTime UnixTimeStampToDateTime(double unixTimeStamp)
         {
@@ -174,6 +224,19 @@ namespace Blockchain_Tool
         [JsonPropertyName("isError")]
         public string IsError { get; set; } = string.Empty;
     }
+
+    public class BalanceResponse
+    {
+        [JsonPropertyName("status")]
+        public string Status { get; set; } = string.Empty;
+
+        [JsonPropertyName("message")]
+        public string Message { get; set; } = string.Empty;
+
+        [JsonPropertyName("result")]
+        public string Result { get; set; } = string.Empty;
+    }
+
 
     // ViewModel for displaying transaction data in the DataGrid
     public class TransactionViewModel
