@@ -12,7 +12,7 @@ namespace Blockchain_Tool
 {
     public partial class MainWindow : Window
     {
-        private readonly string apiKey = "api_key";
+        private readonly string apiKey = "api_key_here";
         private readonly string baseUrl = "https://api.etherscan.io/api";
 
         public MainWindow()
@@ -34,6 +34,24 @@ namespace Blockchain_Tool
                 MessageBox.Show("Please enter a valid wallet address.");
             }
         }
+        private void HomeButton_Click(object sender, RoutedEventArgs e)
+        {
+            // This reloads the MainWindow.xaml, essentially bringing the user back "home"
+            var newWindow = new MainWindow();
+            newWindow.Show();
+
+            // Close the current window
+            this.Close();
+        }
+        private void WalletDashboardButton_Click(object sender, RoutedEventArgs e)
+        {
+            // Create an instance of the WalletDashboardPage
+            var walletDashboardPage = new WalletDashboardPage();
+
+            // Replace the content of the current window with the new page
+            this.Content = walletDashboardPage;
+        }
+
 
         // Event handler for the wallet address click (From/To)
         private async void WalletAddress_Click(object sender, RoutedEventArgs e)
