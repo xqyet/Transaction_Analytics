@@ -48,17 +48,22 @@
         <!-- Main Content Area -->
         <Grid>
             <!-- Updated TextBox for Wallet Address Input (White and Smaller) -->
-            <TextBox x:Name="WalletAddressInput" HorizontalAlignment="Left" VerticalAlignment="Top" Width="400" Height="22" Margin="10,20" 
+            <TextBox x:Name="WalletAddressInput" HorizontalAlignment="Left" VerticalAlignment="Top" Width="400" Height="22" Margin="10,40" 
                      Background="White" Foreground="Black" FontSize="14" />
 
             <!-- Updated Button to fetch transactions (Shorter to match TextBox) -->
-            <Button x:Name="FetchButton" Content="Fetch Transactions" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150" Height="22" Margin="400,20,0,0" Click="FetchButton_Click"/>
+            <Button x:Name="FetchButton" Content="Fetch Transactions" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150" Height="22" Margin="400,40,0,0" Click="FetchButton_Click"/>
 
             <!-- Loading ProgressBar -->
-            <ProgressBar x:Name="LoadingBar" Width="300" Height="20" Margin="10,40,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Visibility="Hidden" IsIndeterminate="True" Foreground="Pink"/>
+            <ProgressBar x:Name="LoadingBar" Width="300" Height="20" Margin="10,80,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Visibility="Hidden" IsIndeterminate="True" Foreground="Pink"/>
+
+            <!-- Small white box for Wallet Value -->
+            <Border Background="White" CornerRadius="5" BorderBrush="LightGray" BorderThickness="1" Padding="5" Margin="30,90,0,0" HorizontalAlignment="Right" VerticalAlignment="Top">
+                <TextBlock x:Name="WalletValueTextBlock" Text="Current Wallet Balance: 0.00 ETH" Foreground="Black" FontSize="12" FontWeight="Bold"/>
+            </Border>
 
             <!-- DataGrid to display transactions -->
-            <DataGrid x:Name="TransactionsGrid" AutoGenerateColumns="False" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10,70,10,10">
+            <DataGrid x:Name="TransactionsGrid" AutoGenerateColumns="False" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10,120,10,10">
                 <!-- Semi-transparent background for the DataGrid -->
                 <DataGrid.Background>
                     <SolidColorBrush Color="#80D3D3D3"/>
