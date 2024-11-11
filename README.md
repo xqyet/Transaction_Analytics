@@ -66,7 +66,7 @@ If you'd like to contribute, please fork the repository and use a feature branch
     ```
 3. Make your changes and commit:
     ```bash
-    git commit -m 'Add a meaningful message'
+    git commit -m 'stuff'
     ```
 4. Push to the branch:
     ```bash
