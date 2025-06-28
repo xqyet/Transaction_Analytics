@@ -18,7 +18,7 @@ A WPF application for analyzing wallet transactions using multiple API's. The ap
 
 ## Interface
 
-![GUI](Transaction_Analytics/gui.png)
+![GUI](Blockchain_Tool/gui.png)
 
 
 
