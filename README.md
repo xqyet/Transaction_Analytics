@@ -2,7 +2,7 @@
 
 A WPF application for analyzing wallet transactions using multiple API's. The application allows users to input a wallet address, fetch transaction history, and view detailed transaction data. Will be adding more analytics tools and automatic transaction mapping in the future. I'll also update the gui for a more modern/sleek look at some point.
 
-**Current Status: In Development** 🚧
+**Current Status: In Dev**
 
 ## Features
 
