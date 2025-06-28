@@ -16,7 +16,9 @@ A WPF application for analyzing wallet transactions using multiple API's. The ap
 - Semi-transparent design with a modern UI featuring a dark grey-to-pink gradient background.
 
 
+## Interface
 
+![GUI](Transaction_Analytics/gui.png)
 
 
 
