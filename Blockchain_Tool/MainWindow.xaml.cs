@@ -12,7 +12,7 @@ namespace Blockchain_Tool
 {
     public partial class MainWindow : Window
     {
-        private readonly string apiKey = "api_key_here";
+        private readonly string apiKey = "api_key_here"; // etherscan api key here
         private readonly string baseUrl = "https://api.etherscan.io/api";
 
         public MainWindow()
